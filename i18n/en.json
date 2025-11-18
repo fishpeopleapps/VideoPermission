@@ -1,0 +1,13 @@
+{
+    "@metadata": {
+        "authors": [
+            "Kimberly Brewer ITSC"
+        ]
+    },
+    "videopermissions-desc": "Allows users with specific permission to upload videos",
+    "right-upload-videos": "Upload video files",
+    "action-upload-videos": "upload video files",
+    "right-not-upload-videos": "Not upload video files",
+    "action-not-upload-videos": "not upload video files",
+    "videopermission-no-perm-to-upload": "Please contact an administrator to upload a video file."
+}

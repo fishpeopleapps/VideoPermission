@@ -1,0 +1,48 @@
+{
+    "name": "VideoPermissions", 
+    "version": "1.0",
+    "author": [
+        "Kimberly Brewer [ITSC]"
+    ],
+    "descriptionmsg": "videopermissions-desc", 
+    "type": "other",
+    "requires": {
+        "MediaWiki": ">= 1.39"
+    },
+    "AutoloadNamespaces": {
+        "MediaWiki\\Extension\\VideoPermissions\\": "src/" 
+    },
+	"MessagesDirs": {
+        "VideoPermissions": [ 
+            "i18n"
+        ]
+    },
+    "AvailableRights": [ 
+        "upload-videos",
+        "not-upload-videos"
+    ],
+    "GroupPermissions": { 
+        "sysop": {
+            "not-upload-videos": false,
+            "upload-videos": true
+        },
+        "user": {
+            "not-upload-videos": true
+        }
+    },
+    "AutoloadClasses": {
+		"SaneCase": "SaneCase.php"
+	},
+    "Hooks": {
+        "UploadVerifyUpload": "main",
+        "BeforeDisplayNoArticleText": [
+            "SaneCase::onBeforeDisplayNoArticleText"
+        ]
+    },
+    "HookHandlers": {
+        "main": {
+            "class": "\\MediaWiki\\Extension\\VideoPermissions\\PermissionCheck"
+        }
+    },
+    "manifest_version": 2
+}
